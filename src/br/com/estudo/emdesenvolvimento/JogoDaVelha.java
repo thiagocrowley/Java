@@ -11,7 +11,6 @@ public class JogoDaVelha {
 		
 		String jo;
 		
-		boolean fim = false;
 		int[][] tabuleiro = new int[3][3];
 	
 		Scanner op = new Scanner(System.in);
@@ -45,6 +44,7 @@ public class JogoDaVelha {
 				for(int j=0;j<tabuleiro.length;j++) {
 					tabuleiro[i][j]=cont;
 					System.out.print("|"+tabuleiro[i][j]+"|");
+					//System.out.print("|"+i+j+"|");
 					cont++;
 				}
 				System.out.println();
@@ -55,7 +55,6 @@ public class JogoDaVelha {
 			
 			jo = player;
 
-			while(fim==false) {
 				System.out.print("\n"+player+", escolha agora onde deseja jogar (digite o numero da casa): ");
 				casa = op.nextInt(); 
 				
@@ -72,7 +71,7 @@ public class JogoDaVelha {
 					//System.out.println();
 				}
 				computadorPeca();
-			}		
+					
 		}
 
 		private void computadorPeca() {
@@ -84,26 +83,33 @@ public class JogoDaVelha {
 						tabuleiro[i][j]=99;
 						System.out.println("Agora é sua vez!\n");
 						atualizaTabuleiro();
+						verificaJogo();
 						escolheCasa(jo);
 						break;
 					}else {
 						continue;
 					}
-					
 				}
 			}
-			atualizaTabuleiro();
-			//verificaJogo();
 		}
 
-		/*private void verificaJogo() {
+		private void verificaJogo() {
 			
-			if(preenchidosA >= 3) {
-				System.out.println("verificado!");
-				System.out.println(fim);
-				fim=true;
-			}
-		}*/
+			System.out.println("verificando");
+			
+			//VERIFICA HORIZONTAL JOGADOR 88
+			if((tabuleiro[0][0]==88&&tabuleiro[0][1]==88&&tabuleiro[0][2]==88)||  
+			   (tabuleiro[1][0]==88&&tabuleiro[1][1]==88&&tabuleiro[1][2]==88)||
+			   (tabuleiro[2][0]==88&&tabuleiro[2][1]==88&&tabuleiro[2][2]==88)) {
+				System.out.println(jo+", parabéns, você venceu!");
+				fimJogo();
+			} 
+		}
+
+		private void fimJogo() {
+
+			System.out.println("Fim do jogo!");
+		}
 
 		private void atualizaTabuleiro() {
 
