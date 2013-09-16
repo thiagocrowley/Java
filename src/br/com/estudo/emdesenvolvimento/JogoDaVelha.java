@@ -97,7 +97,7 @@ public class JogoDaVelha {
 			
 			System.out.println("verificando");
 			
-			//VERIFICA HORIZONTAL JOGADOR 88
+			//VERIFICA HORIZONTAL JOGADOR 88k
 			if((tabuleiro[0][0]==88&&tabuleiro[0][1]==88&&tabuleiro[0][2]==88)||  
 			   (tabuleiro[1][0]==88&&tabuleiro[1][1]==88&&tabuleiro[1][2]==88)||
 			   (tabuleiro[2][0]==88&&tabuleiro[2][1]==88&&tabuleiro[2][2]==88)) {
