@@ -1,6 +1,6 @@
 //CAELUM PÁGINA 53
 
-package br.com.estudo.exercicios.caelum;
+package br.com.estudo.exercicios.caelum.resolvidos;
 
 public class Funcionario {
 	

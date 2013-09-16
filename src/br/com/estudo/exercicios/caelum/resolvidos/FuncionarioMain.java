@@ -1,6 +1,6 @@
 
 
-package br.com.estudo.exercicios.caelum;
+package br.com.estudo.exercicios.caelum.resolvidos;
 
 import java.util.Scanner;
 
