@@ -1,3 +1,5 @@
+//CAELUM PÁGINA 53
+
 package br.com.estudo.exercicios.caelum;
 
 public class Funcionario {
@@ -32,3 +34,23 @@ public class Funcionario {
 		System.out.println("Salario: "+salario);
 	}
 }
+
+class Empresa {
+	String nome,
+		   cnpj;
+	Funcionario[] empregados;
+	
+	void adiciona(Funcionario fulano) {
+		
+		for(int i=0;i<empregados.length;i++) {
+			
+			if (empregados[i]==null) {
+				this.empregados[i] = fulano;
+			}
+		}
+	}
+}
+
+
+
+
