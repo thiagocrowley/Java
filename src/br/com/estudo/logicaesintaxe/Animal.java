@@ -1,6 +1,6 @@
 //http://www.giulianoprado.xpg.com.br/dai/arquivos/exercicios_heranca.pdf
 
-package br.com.estudo.emdesenvolvimento;
+package br.com.estudo.logicaesintaxe;
 
 public class Animal {
 

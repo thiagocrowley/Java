@@ -1,4 +1,5 @@
-package br.com.estudo.emdesenvolvimento;
+package br.com.estudo.logicaesintaxe;
+
 
 
 public class Mamifero extends Animal{
