@@ -1,4 +1,4 @@
-package br.com.estudo.exercicios.caelum;
+package br.com.estudo.exercicios.caelum.resolvidos;
 
 import javax.swing.JOptionPane;
 
