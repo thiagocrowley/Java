@@ -1,5 +1,6 @@
 package br.com.estudo.exercicios.caelum;
 
+
 public class Casa {
 	
 	String cor,

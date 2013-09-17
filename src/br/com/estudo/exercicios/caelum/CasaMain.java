@@ -1,5 +1,6 @@
 package br.com.estudo.exercicios.caelum;
 
+
 public class CasaMain {
 
 	public static void main(String[] args) {
