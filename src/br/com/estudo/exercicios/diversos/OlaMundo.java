@@ -1,4 +1,4 @@
-package br.com.estudo.exercicios;
+package br.com.estudo.exercicios.diversos;
 public class OlaMundo{
 	public static void main(String[] args){
 	

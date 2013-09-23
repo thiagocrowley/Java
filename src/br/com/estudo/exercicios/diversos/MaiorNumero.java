@@ -1,4 +1,4 @@
-package br.com.estudo.exercicios;
+package br.com.estudo.exercicios.diversos;
 
 /*
  * 		Informar 3 números e retornar o maior.

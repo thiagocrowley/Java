@@ -1,6 +1,6 @@
 // CRIAR MÉTODO ESTÁTICO "MEDIA" PARA ESTA CLASSE
 
-package br.com.estudo.exercicios;
+package br.com.estudo.exercicios.diversos;
 
 public class VariavelEstaticaMain {
 

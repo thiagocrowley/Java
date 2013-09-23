@@ -1,4 +1,4 @@
-package br.com.estudo.exercicios;
+package br.com.estudo.exercicios.diversos;
 
 /*
  * 		Repetir o nome 10 vezes utilizando WHILE 

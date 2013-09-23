@@ -1,4 +1,4 @@
-package br.com.estudo.exercicios;
+package br.com.estudo.exercicios.diversos;
 
 /*
  * 		Classe que calcula a media de 3 numeros.
