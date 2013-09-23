@@ -1,4 +1,4 @@
-package br.com.estudo.exercicios.herpol;
+package br.com.estudo.exercicios.herpol.animal;
 
 public class Gato extends Animal {
 

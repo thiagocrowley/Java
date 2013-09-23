@@ -1,4 +1,4 @@
-package br.com.estudo.exercicios.herpol;
+package br.com.estudo.exercicios.herpol.imovel;
 
 public class Novo extends Imovel {
 

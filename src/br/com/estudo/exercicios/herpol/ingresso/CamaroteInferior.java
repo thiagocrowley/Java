@@ -1,4 +1,5 @@
-package br.com.estudo.exercicios.herpol;
+package br.com.estudo.exercicios.herpol.ingresso;
+
 
 public class CamaroteInferior extends Ingresso{
 

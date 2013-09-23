@@ -1,4 +1,4 @@
-package br.com.estudo.exercicios.herpol;
+package br.com.estudo.exercicios.herpol.ingresso;
 
 public class Normal extends Ingresso {
 
