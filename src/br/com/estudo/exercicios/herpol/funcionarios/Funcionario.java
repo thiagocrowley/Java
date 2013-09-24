@@ -7,7 +7,7 @@ public class Funcionario {
 	
 	private double salario;
 	
-	String getNome() {
+	public String getNome() {
 		return nome;
 	}
 	
