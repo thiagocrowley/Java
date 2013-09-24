@@ -3,7 +3,7 @@ package br.com.estudo.exercicios.herpol.imovel;
 public class Velho extends Imovel {
 
 
-		void setValor(double valor) {
+		public void setValor(double valor) {
 			preco = valor-10;
 		}
 		

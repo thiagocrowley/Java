@@ -2,7 +2,7 @@ package br.com.estudo.exercicios.herpol.imovel;
 
 public class Novo extends Imovel {
 
-	void setValor(double valor) {
+	public void setValor(double valor) {
 		preco = valor+25;
 	}
 	
