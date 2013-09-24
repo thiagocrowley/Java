@@ -4,7 +4,7 @@ public class Rica extends Pessoa {
 
 	double dinheiro;
 	
-	void fazCompras() {
+	public void fazCompras() {
 		
 		System.out.println("Fazendo compras!");
 	}
