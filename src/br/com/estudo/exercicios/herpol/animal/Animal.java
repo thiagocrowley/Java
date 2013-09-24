@@ -14,7 +14,8 @@ public class Animal {
 		this.nome = animal;
 	}
 	
-	void caminha() {
-		System.out.println(this.nome+" andando, ele e um "+this.raca);
+	public void caminha() {
+//		System.out.println(this.nome+" andando, ele e um "+this.raca);
+		System.out.println("Animal caminhando");
 	}
 }
