@@ -12,7 +12,7 @@ public class Cachorro extends Animal{
 		
 	}
 
-	void late() {
+	public void late() {
 		System.out.println("cachorro latindo");
 	}
 

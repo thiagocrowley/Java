@@ -12,7 +12,7 @@ public class Gato extends Animal {
 		
 	}
 
-	void mia() {
+	public void mia() {
 		System.out.println("Gato miando");
 	}
 }
