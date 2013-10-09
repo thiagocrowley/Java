@@ -15,22 +15,28 @@ public class Teste {
 		PdfParser pdf = new PdfParser();
 		
 		pdf.setEnderecoRecurso("C:/ini.pdf");
-//		System.out.println(pdf.getConteudo());
 		conteudo = pdf.getConteudo();
 		
-		FileWriter arq = new FileWriter("c:/thiago/teste.txt");
+		FileWriter arq = new FileWriter("c:/thiago/testeasdf.txt");
 		PrintWriter grava = new PrintWriter(arq);
 		
-		if(conteudo.equals(";")) {
-			cont++;			
-		} else {
+		for(int i = 0; i<conteudo.length();i++) {
 			
+			if (conteudo.charAt(i) == ';'){
+//				grava.print(conteudo.charAt(i));
+				cont++;
+			}
+		
+			/*while (conteudo.charAt(i) == ';'){
+				grava.print(conteudo.charAt(i));
+				cont++;
+			}*/
 		}
 		
 		System.out.println(cont);
 		
-		/*grava.print(conteudo);
-		grava.close();*/
+		grava.print(conteudo);
+		grava.close();
 		
 //		System.out.println("Autor: "+autor);
 //		System.out.println("CPF: "+cpf);
