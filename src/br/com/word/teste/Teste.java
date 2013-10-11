@@ -30,44 +30,18 @@ public class Teste {
 		
 		autor = cap.capturaAutor(conteudo);
 		cpf = cap.capturaCPF(conteudo);
-		
-		System.out.println("autor: "+autor);
-		System.out.println("cpf: "+cpf);
 
-		/*for(int i = 0; i<conteudo.length();i++) {
-			if (conteudo.charAt(i) == ')'){
-
-				if (conteudo.charAt(i) == ')'){
-					do{
-						autor = autor+conteudo.charAt(i);
-						i++;
-					}while(conteudo.charAt(i) != ',');
-					
-				}else if (conteudo.charAt(i) == '.'){
-					do{
-						cpf = cpf+conteudo.charAt(i);
-						i++;
-					}while(conteudo.charAt(i) != ',');
-					
-				} else {
-					i++;
-					System.out.println("ultimo else");
-				}
-				System.out.println("sai");
-			}			
-		}*/
-
-		/*System.out.print("Autor: "+autor);
+		System.out.print("Autor: "+autor);
 		System.out.print("\nCPF: "+cpf);
 
 		grvautor.print(autor);
 		grvautor.print(cpf);
 		grvautor.print(endereco);
-		grvautor.close();*/
+		grvautor.close();
 
-		/*grava.print(conteudo);
+		grava.print(conteudo);
 		grava.close();
-		 */
+		 
 	}
 
 }
