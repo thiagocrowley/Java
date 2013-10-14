@@ -30,9 +30,11 @@ public class Teste {
 		
 		autor = cap.capturaAutor(conteudo);
 		cpf = cap.capturaCPF(conteudo);
+		endereco = cap.capturaEndereco(conteudo);
 
 		System.out.print("Autor: "+autor);
 		System.out.print("\nCPF: "+cpf);
+		System.out.println("\nEndereço: "+endereco);
 
 		grvautor.print(autor);
 		grvautor.print(cpf);

@@ -6,9 +6,10 @@ import java.util.regex.Pattern;
 public class Captura {
 
 	String autor="",
-			cpf="";
+		   cpf="",
+		   endereco="";
 	int cont=0;
-	boolean teste = false;
+//	boolean teste = false;
 
 	public String capturaAutor(String conteudo) {
 		for(int i = 0; i<conteudo.length();i++) {
@@ -25,25 +26,36 @@ public class Captura {
 	}
 
 	public String capturaCPF(String conteudo) {
-
-		//procurar por string completa -- IMPORTANTE "n. "
 		for(int i = 0; i<conteudo.length();i++) {
-			String l = Character.toString(conteudo.charAt(i));
-//			System.out.println("teste: "+l.matches("n"));
-			System.out.println("outro teste: "+l.indexOf("n"));
-		
-			/*if (l.matches("n. ")){
-				cpf=cpf+Character.toString(conteudo.charAt(i));
-			} */
-
+			if (conteudo.charAt(i) == '/'){
+				i+=13;
+				do{
+					cpf = cpf+conteudo.charAt(i);
+					i++;
+				}while(conteudo.charAt(i) != ',');
+				break;
+			}
 		}
 		return cpf;
 	}
-
-	/*do{
+	
+	public String capturaEndereco(String conteudo) {
+		for(int i = 0; i<conteudo.length();i++) {
+			if (conteudo.contains("Rua")){
+				System.out.println("Entrei no if");
+				System.out.println(conteudo.charAt(i));
+				System.out.println(i);
+				break;
+				/*i+=13;
+				do{
 					cpf = cpf+conteudo.charAt(i);
 					i++;
-				}while(conteudo.charAt(i) != ',');*/
+				}while(conteudo.charAt(i) != ',');
+				break;*/
+			}
+		}
+		return endereco;
+	}
 
 }			
 
