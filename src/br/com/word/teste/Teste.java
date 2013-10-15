@@ -26,6 +26,7 @@ public class Teste {
 		FileWriter aut = new FileWriter("c:/thiago/autor.txt");
 		PrintWriter grvautor = new PrintWriter(aut);
 		
+		//Conta a quantidade de autores
 		for (int i=0 ; i<conteudo.length();i++) {
 			if(conteudo.charAt(i) == ';') {
 				cont++;
