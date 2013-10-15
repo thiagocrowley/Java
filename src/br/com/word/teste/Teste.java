@@ -12,7 +12,7 @@ public class Teste {
 		cpf="",
 		autor="",
 		endereco="";
-		//		int cont=0;
+				int cont=0;
 
 		PdfParser pdf = new PdfParser();
 
@@ -25,7 +25,17 @@ public class Teste {
 		//gravar teste autor.txt
 		FileWriter aut = new FileWriter("c:/thiago/autor.txt");
 		PrintWriter grvautor = new PrintWriter(aut);
+		
+		for (int i=0 ; i<conteudo.length();i++) {
+			if(conteudo.charAt(i) == ';') {
+				cont++;
+			} else{
+				
+			}
+		}
 
+		System.out.println("Quantidade de autores: "+cont);
+		
 		Captura cap = new Captura();
 		
 		autor = cap.capturaAutor(conteudo);
