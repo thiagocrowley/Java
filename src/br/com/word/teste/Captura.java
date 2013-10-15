@@ -1,25 +1,21 @@
 package br.com.word.teste;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class Captura {
 
 	String autor="",
-		   cpf="",
-		   endereco="";
+			cpf="",
+			endereco="";
 	int cont=0;
-//	boolean teste = false;
 
 	public String capturaAutor(String conteudo) {
 		for(int i = 0; i<conteudo.length();i++) {
-			//			if ((conteudo.charAt(i) == ')')||(conteudo.charAt(i) == ';')){
-			if (conteudo.charAt(i) == ')'){
+			if ((conteudo.charAt(i) == ')')||(conteudo.charAt(i) == ';')){
 				i+=3;
 				do{
 					autor = autor+conteudo.charAt(i);
 					i++;
 				}while(conteudo.charAt(i) != ',');
+				break;
 			}
 		}
 		return autor;
@@ -40,22 +36,17 @@ public class Captura {
 	}
 	
 	public String capturaEndereco(String conteudo) {
-		for(int i = 0; i<conteudo.length();i++) {
-			if (conteudo.contains("Rua")){
-				System.out.println("Entrei no if");
-				System.out.println(conteudo.charAt(i));
-				System.out.println(i);
-				break;
-				/*i+=13;
-				do{
-					cpf = cpf+conteudo.charAt(i);
-					i++;
-				}while(conteudo.charAt(i) != ',');
-				break;*/
-			}
-		}
+			
+			String procurada = "Rua";  
+			int pos = conteudo.indexOf(procurada) + procurada.length();  
+			pos = pos - 3;
+
+			do {
+				endereco = endereco+conteudo.charAt(pos);
+				pos++;
+			}while(conteudo.charAt(pos)!=';');
 		return endereco;
 	}
 
-}			
+}
 
