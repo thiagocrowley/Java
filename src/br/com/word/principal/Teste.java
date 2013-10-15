@@ -1,5 +1,6 @@
 package br.com.word.principal;
 
+import java.awt.List;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,54 +10,57 @@ public class Teste {
 	public static void main(String[] args) throws IOException {
 
 		String conteudo, 
-		cpf="",
-		autor="",
-		endereco="";
-		//		int cont=0;
-
+				cpf="",
+				autor="",
+				endereco="";
+		int cont=0;
+		
 		PdfParser pdf = new PdfParser();
+		Captura cap = new Captura();
 
-		pdf.setEnderecoRecurso("C:/ini.pdf");
-		conteudo = pdf.getConteudo();
+		pdf.setEnderecoRecurso("C:/ini.pdf");//arquivo a ser desmembrado
+		conteudo = pdf.getConteudo();//Salva conteúdo do arquivo na variável "conteudo"
 
-		FileWriter arq = new FileWriter("c:/thiago/testeasdf.txt");
+		//Cria e grava o arquivo
+		FileWriter arq = new FileWriter("c:/thiago/testeasdf.txt"); 
 		PrintWriter grava = new PrintWriter(arq);
 
 		//gravar teste autor.txt
 		FileWriter aut = new FileWriter("c:/thiago/autor.txt");
 		PrintWriter grvautor = new PrintWriter(aut);
 
-
-		for(int i = 0; i<conteudo.length();i++) {
-			if (conteudo.charAt(i) == ')'){
-				
-				if (conteudo.charAt(i) == ')'){
-					do{
-						autor = autor+conteudo.charAt(i);
-						i++;
-					}while(conteudo.charAt(i) != ',');
-				}
-				//captura cpf
-				if (conteudo.charAt(i) == '.'){
-					do{
-						cpf = cpf+conteudo.charAt(i);
-						i++;
-					}while(conteudo.charAt(i) != ',');
-				}
-			}			
+		//Conta a quantidade de autores
+		for (int i=0 ; i<conteudo.length();i++) {
+			if(conteudo.charAt(i) == ';') {
+				cont++;
+			} else{
+//				System.out.println("FAVOR IMPLEMENTAR O ELSE QUANTIDADE DE AUTORES");
+			}
 		}
+		
+		//mostra na tela a quantidade de autor
+		System.out.println("Quantidade de autores: "+cont);
 
+		//variaveis recebem o valor capturado
+		autor = cap.capturaAutor(conteudo);
+		cpf = cap.capturaCPF(conteudo);
+		endereco = cap.capturaEndereco(conteudo);
+
+		//apresenta os dados capturados na tela
 		System.out.print("Autor: "+autor);
 		System.out.print("CPF: "+cpf);
-
-		grvautor.print(autor);
-		grvautor.print(cpf);
-		grvautor.print(endereco);
+		System.out.println("Endereço: "+endereco);
+		
+		//grava no arquivo autor os dados coletados
+		grvautor.println("Autor: "+autor);
+		grvautor.println("CPF: "+cpf);
+		grvautor.println("Endereço: "+endereco);
 		grvautor.close();
 
-		/*grava.print(conteudo);
+		//grava no arquivo principal todo o conteudo para txt
+		grava.print(conteudo);
 		grava.close();
-		 */
+		
 	}
 
 }
