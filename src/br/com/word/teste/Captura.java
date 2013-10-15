@@ -2,15 +2,13 @@ package br.com.word.teste;
 
 public class Captura {
 
-	String autor="",
-			cpf="",
-			endereco="";
 	int cont=0;
 
-	public String capturaAutor(String conteudo) {
-		for(int i = 0; i<conteudo.length();i++) {
+	public String capturaAutor(String conteudo, int contador) {
+		String autor="";
+		for(int i = contador; i<conteudo.length();i++) {
 			if ((conteudo.charAt(i) == ')')||(conteudo.charAt(i) == ';')){
-				i+=3;
+				i+=2;
 				do{
 					autor = autor+conteudo.charAt(i);
 					i++;
@@ -21,8 +19,9 @@ public class Captura {
 		return autor;
 	}
 
-	public String capturaCPF(String conteudo) {
-		for(int i = 0; i<conteudo.length();i++) {
+	public String capturaCPF(String conteudo, int contador) {
+		String cpf = "";
+		for(int i = contador; i<conteudo.length();i++) {
 			if (conteudo.charAt(i) == '/'){
 				i+=13;
 				do{
@@ -35,8 +34,8 @@ public class Captura {
 		return cpf;
 	}
 	
-	public String capturaEndereco(String conteudo) {
-			
+	public String capturaEndereco(String conteudo, int contador) {
+			String endereco="";
 			String procurada = "Rua";  
 			int pos = conteudo.indexOf(procurada);  
 
