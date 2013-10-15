@@ -38,8 +38,7 @@ public class Captura {
 	public String capturaEndereco(String conteudo) {
 			
 			String procurada = "Rua";  
-			int pos = conteudo.indexOf(procurada) + procurada.length();  
-			pos = pos - 3;
+			int pos = conteudo.indexOf(procurada);  
 
 			do {
 				endereco = endereco+conteudo.charAt(pos);
