@@ -31,6 +31,7 @@ public class Captura {
 				break;
 			}
 		}
+		cpf = cpf.replaceAll("\\.|-", "");
 		return cpf;
 	}
 	
@@ -43,6 +44,8 @@ public class Captura {
 				endereco = endereco+conteudo.charAt(pos);
 				pos++;
 			}while(conteudo.charAt(pos)!=';');
+			
+		endereco = endereco.toUpperCase();
 		return endereco;
 	}
 
