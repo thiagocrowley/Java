@@ -35,16 +35,22 @@ public class Captura {
 		return cpf;
 	}
 	
+	String endereco="";
+	
+	String procurada = "Rua"; 
+//	int pos = conteudo.indexOf(procurada);
+	
 	public String capturaEndereco(String conteudo, int contador) {
-			String endereco="";
-			String procurada = "Rua";  
-			int pos = conteudo.indexOf(procurada);  
-
-			do {
-				endereco = endereco+conteudo.charAt(pos);
-				pos++;
-			}while(conteudo.charAt(pos)!=';');
+		
+		
+		for(int i = contador; i<conteudo.length(); i++) {
 			
+			do{
+				endereco = endereco+conteudo.charAt(i);
+				i++;
+			}while(conteudo.charAt(i) != ';');
+		}
+	
 		endereco = endereco.toUpperCase();
 		return endereco;
 	}
