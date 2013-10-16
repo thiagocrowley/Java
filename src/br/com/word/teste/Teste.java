@@ -23,7 +23,10 @@ public class Teste {
 
 		pdf.setEnderecoRecurso("C:/ini.pdf");//arquivo a ser desmembrado
 		conteudo = pdf.getConteudo();//Salva conteúdo do arquivo na variável "conteudo"
-
+		conteudo = conteudo.replaceAll("[\\)]", ";");//transforma parentese em ponto e vírgula
+		conteudo = conteudo.replaceAll("\\s", " ");//codigo para transformar quebra de linha em espaço
+		conteudo = conteudo.replaceAll("  ", " ");//transforma espaço duplo em espaço unico
+		
 		//Cria e grava o arquivo
 		FileWriter arq = new FileWriter("c:/thiago/testeasdf.txt"); 
 		PrintWriter grava = new PrintWriter(arq);
@@ -32,7 +35,6 @@ public class Teste {
 		FileWriter aut = new FileWriter("c:/thiago/autor.txt");
 		PrintWriter grvautor = new PrintWriter(aut);
 		
-
 		//Conta a quantidade de autores
 		for (int i=0 ; i<conteudo.length();i++) {
 			if(conteudo.charAt(i) == ';') {
@@ -41,6 +43,8 @@ public class Teste {
 //				System.out.println("FAVOR IMPLEMENTAR O ELSE QUANTIDADE DE AUTORES");
 			}
 		}
+		
+		System.out.println("Quantidade de autores: "+cont);
 		
 		//identifica posição do ";"
 		int[] posicao = new int[cont];
