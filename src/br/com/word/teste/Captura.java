@@ -34,24 +34,37 @@ public class Captura {
 		cpf = cpf.replaceAll("\\.|-", "");
 		return cpf;
 	}
-	
-	String endereco="";
-	
-	String procurada = "Rua"; 
-//	int pos = conteudo.indexOf(procurada);
-	
+
+
+	//	int pos = conteudo.indexOf(procurada);
+
 	public String capturaEndereco(String conteudo, int contador) {
-		
-		
+		String endereco="";
+		String procurada = "Rua"; 
+
+		String novoConteudo = "";
 		for(int i = contador; i<conteudo.length(); i++) {
-			
-			do{
-				endereco = endereco+conteudo.charAt(i);
-				i++;
-			}while(conteudo.charAt(i) != ';');
+			novoConteudo = novoConteudo+conteudo.charAt(i);
 		}
-	
+
+		int pos = novoConteudo.indexOf(procurada);
+
+		for (int i=pos;i<novoConteudo.length();) {
+			try {
+				
+				do{
+					endereco = endereco+novoConteudo.charAt(i);	
+					i++;
+				}while(novoConteudo.charAt(i) != ';');
+				break;
+			} catch (StringIndexOutOfBoundsException e) {
+//				e.printStackTrace();
+			}
+		}
+
+
 		endereco = endereco.toUpperCase();
+		System.out.println(endereco);
 		return endereco;
 	}
 

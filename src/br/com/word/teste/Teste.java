@@ -1,9 +1,3 @@
-/**
- * 
- *  * Endereço não está sendo informado;
- *  
- **/
-
 package br.com.word.teste;
 
 import java.io.FileWriter;
@@ -20,7 +14,7 @@ public class Teste {
 		PdfParser pdf = new PdfParser();
 		Captura cap = new Captura();
 
-		pdf.setEnderecoRecurso("C:/ini.pdf");//arquivo a ser desmembrado
+		pdf.setEnderecoRecurso("C:/inib.pdf");//arquivo a ser desmembrado
 		conteudo = pdf.getConteudo();//Salva conteúdo do arquivo na variável "conteudo"
 		conteudo = conteudo.replaceAll("[\\)]", ";");//transforma parentese em ponto e vírgula
 		conteudo = conteudo.replaceAll("\\s", " ");//codigo para transformar quebra de linha em espaço
@@ -30,6 +24,9 @@ public class Teste {
 		FileWriter arq = new FileWriter("c:/thiago/testeasdf.txt"); 
 		PrintWriter grava = new PrintWriter(arq);
 
+		grava.print(conteudo);
+		grava.close();
+		
 		//gravar teste autor.txt
 		FileWriter aut = new FileWriter("c:/thiago/autor.txt");
 		PrintWriter grvautor = new PrintWriter(aut);
@@ -38,9 +35,11 @@ public class Teste {
 		for (int i=0 ; i<conteudo.length();i++) {
 			if(conteudo.charAt(i) == ';') {
 				cont++;
-			} else{
+			} 
+			
+			/*else{
 				//				System.out.println("FAVOR IMPLEMENTAR O ELSE QUANTIDADE DE AUTORES");
-			}
+			}*/
 		}
 
 		System.out.println("Quantidade de autores: "+cont);
@@ -50,6 +49,7 @@ public class Teste {
 		String[] autor = new String[cont];
 		String[] cpf = new String[cont];
 		String[] endereco = new String[cont];
+		
 		int n = 0;
 		for (int i=0 ; i<conteudo.length();i++) {
 			if(conteudo.charAt(i) == ';') {
@@ -83,8 +83,7 @@ public class Teste {
 		grvautor.close();
 
 		//grava no arquivo principal todo o conteudo para txt
-		grava.print(conteudo);
-		grava.close();
+		
 
 	}
 
