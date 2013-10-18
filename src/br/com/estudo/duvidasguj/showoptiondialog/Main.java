@@ -16,35 +16,42 @@ class Main{
 	public static void main(String args[]){
 
 		String lista[] = new String[5];//LEMBRAR DE VOLTAR PARA 10
-		Object options[] = {"Incluir", "Atender", "Sair"};
 
 		int menu = JOptionPane.showOptionDialog(null, "Atenção!", "Fila de clientes",   
-					   JOptionPane.YES_OPTION,
-					   JOptionPane.WARNING_MESSAGE, null,   
-					   options , null);
-			
+				JOptionPane.YES_OPTION,
+				JOptionPane.WARNING_MESSAGE, null,   
+				new String[]{"Incluir", "Atender", "Sair"}  , null);
+
 		//INCLUIR COMENTÁRIO - CÓDIGO TOTALMENTE ALTERADO
 		for(int i=0;i<lista.length; i++){  	
 			if (menu == JOptionPane.YES_OPTION){ 
 				lista[i] = JOptionPane.showInputDialog("Digite um nome: ");
-			} else if(menu == JOptionPane.NO_OPTION) {//SUBSTITUÍ O YES_NO_OPTION POR NO_OPTION = ATENDER
-				lista[i-1]=null;
-				menu=JOptionPane.YES_OPTION;
-				i-=2;
+			} else if(menu == JOptionPane.NO_OPTION) {//ALTEREI YES_NO_OPTION PARA NO_OPTION = ATENDER
+				for(int j=0;j<lista.length;j++) {
+					if(j<4){//CORRIGIR PARA 9
+						lista[j]=lista[j+1];
+						i-=2;
+					}
+				}
 			} else if(menu == JOptionPane.CANCEL_OPTION){
 				break;
 			}
-			
+
 			// for que imprime os 10 nomes inseridos na ordem na qual foram inseridos
-						for(int j = 0; j < lista.length;j++){  
-							System.out.println(lista[j]); 
-						}
-						System.out.println();;
-			
+			for(int j = 0; j < lista.length;j++){  
+				System.out.println(lista[j]); 
+			}
+			System.out.println();
+
 			menu = JOptionPane.showOptionDialog(null, "Atenção!", "Fila de clientes",   
-					   JOptionPane.YES_OPTION,
-					   JOptionPane.WARNING_MESSAGE, null,   
-					   options , null);	
+					JOptionPane.YES_OPTION,
+					JOptionPane.WARNING_MESSAGE, null,   
+					new String[]{"Incluir", "Atender", "Sair"} , null);	
 		}
 	}    
 }
+
+//CÓDIGO INCLUSÃO E EXCLUSÃO EM PILHA
+/*lista[i-1]=null;
+menu=JOptionPane.YES_OPTION;
+i-=2;*/
