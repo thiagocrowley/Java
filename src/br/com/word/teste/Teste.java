@@ -14,7 +14,7 @@ public class Teste {
 		PdfParser pdf = new PdfParser();
 		Captura cap = new Captura();
 
-		pdf.setEnderecoRecurso("C:/inib.pdf");//arquivo a ser desmembrado
+		pdf.setEnderecoRecurso("C:/ini.pdf");//arquivo a ser desmembrado
 		conteudo = pdf.getConteudo();//Salva conteúdo do arquivo na variável "conteudo"
 		conteudo = conteudo.replaceAll("[\\)]", ";");//transforma parentese em ponto e vírgula
 		conteudo = conteudo.replaceAll("\\s", " ");//codigo para transformar quebra de linha em espaço
@@ -31,18 +31,20 @@ public class Teste {
 		FileWriter aut = new FileWriter("c:/thiago/autor.txt");
 		PrintWriter grvautor = new PrintWriter(aut);
 
+		Util u = new Util();
+		
+		//apaga todo conteudo do final dos autores
+		u.apagaConteudo(conteudo);
+		
+		
 		//Conta a quantidade de autores
 		for (int i=0 ; i<conteudo.length();i++) {
 			if(conteudo.charAt(i) == ';') {
 				cont++;
 			} 
-			
-			/*else{
-				//				System.out.println("FAVOR IMPLEMENTAR O ELSE QUANTIDADE DE AUTORES");
-			}*/
 		}
 
-		System.out.println("Quantidade de autores: "+cont);
+//		System.out.println("Quantidade de autores: "+cont);
 
 		//identifica posição do ";"
 		int[] posicao = new int[cont];
@@ -50,41 +52,27 @@ public class Teste {
 		String[] cpf = new String[cont];
 		String[] endereco = new String[cont];
 		
+		//percorre todo conteúdo e armazena posição do ";" no array posição
 		int n = 0;
 		for (int i=0 ; i<conteudo.length();i++) {
 			if(conteudo.charAt(i) == ';') {
 				posicao[n]=i;
 				n++;
-			} else{
-				//				System.out.println("FAVOR IMPLEMENTAR O ELSE QUANTIDADE DE AUTORES");
 			}
 		}
 
-		//atribui autor
 		for (int i=0 ; i<posicao.length;i++) {
+			//Atribui dados: autor, cpf e endereço
 			autor[i] = cap.capturaAutor(conteudo, posicao[i]);
 			cpf[i] = cap.capturaCPF(conteudo, posicao[i]);
 			endereco[i] = cap.capturaEndereco(conteudo, posicao[i]);
-		}
-
-		//apresenta os dados capturados na tela
-		for (int i=0 ; i<posicao.length;i++) {
-		/*	System.out.println(i+1+"º cadastro");
-			System.out.println(" autor: "+autor[i]);
-			System.out.println(" cpf: "+cpf[i]);
-			System.out.println(" endereco: "+endereco[i]+"\n");*/
-
+			
+			//grava os dados no arquivo
 			grvautor.println("Autor: "+autor[i]);
 			grvautor.println("CPF: "+cpf[i]);
 			grvautor.println("Endereço: "+endereco[i]+"\n");
 			grvautor.println("");
-
 		}
 		grvautor.close();
-
-		//grava no arquivo principal todo o conteudo para txt
-		
-
 	}
-
 }

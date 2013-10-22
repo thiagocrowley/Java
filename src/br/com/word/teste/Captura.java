@@ -35,9 +35,6 @@ public class Captura {
 		return cpf;
 	}
 
-
-	//	int pos = conteudo.indexOf(procurada);
-
 	public String capturaEndereco(String conteudo, int contador) {
 		String endereco="";
 		String procurada = "Rua"; 
@@ -64,7 +61,7 @@ public class Captura {
 
 
 		endereco = endereco.toUpperCase();
-		System.out.println(endereco);
+//		System.out.println(endereco);
 		return endereco;
 	}
 
