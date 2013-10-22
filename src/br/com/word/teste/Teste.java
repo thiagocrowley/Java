@@ -28,13 +28,13 @@ public class Teste {
 		grava.close();
 		
 		//gravar teste autor.txt
-		FileWriter aut = new FileWriter("c:/thiago/autor.txt");
+		FileWriter aut = new FileWriter("c:/thiago/autor.doc");
 		PrintWriter grvautor = new PrintWriter(aut);
 
 		Util u = new Util();
 		
 		//apaga todo conteudo do final dos autores
-		u.apagaConteudo(conteudo);
+		conteudo =  u.apagaConteudo(conteudo);
 		
 		
 		//Conta a quantidade de autores
@@ -68,9 +68,29 @@ public class Teste {
 			endereco[i] = cap.capturaEndereco(conteudo, posicao[i]);
 			
 			//grava os dados no arquivo
-			grvautor.println("Autor: "+autor[i]);
+			grvautor.println(i+1+". AUTOR: "+autor[i]);
 			grvautor.println("CPF: "+cpf[i]);
-			grvautor.println("Endereço: "+endereco[i]+"\n");
+			grvautor.println("GAVETEIRO: Sim( ) Não( )");
+			grvautor.println("MUTUÁRIO ORIGINAL: ");
+			grvautor.println("CPF: ");
+			grvautor.println("OBSERVAÇÕES: ");
+			grvautor.println("PERCENTUAL DE RENDA: ");
+			grvautor.println("Nº DO CONTRATO: ");
+			grvautor.println("ENDEREÇO DO IMÓVEL OBJETO DO CONTRATO: ");
+			grvautor.println("ENDEREÇO CONSTANTE NA INICIAL: "+endereco[i]);
+			grvautor.println("AGENTE FINANCEIRO: ");
+			grvautor.println("PRODUTO: ");
+			grvautor.println("RESPONSABILIDADE: ");
+			grvautor.println("FCVS: ");
+			grvautor.println("TIPO DE EVENTO: ");
+			grvautor.println("APÓLICE: ");
+			grvautor.println("DATA DA ASSINATURA: ");
+			grvautor.println("VIGÊNCIA: ");
+			grvautor.println("SITUAÇÃO DO CONTRATO: ");
+			grvautor.println("SITUAÇÃO DO SINISTRO: ");
+			grvautor.println("VALOR DA IMPORTANCIA SEGURADA: ");
+			grvautor.println("VALOR DO SALDO DEVEDOR:");
+			grvautor.println("SUSPEITA DE LITISPENDENCIA: Sim (   )  Não  (   )");
 			grvautor.println("");
 		}
 		grvautor.close();

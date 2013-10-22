@@ -1,21 +1,18 @@
 package br.com.word.teste;
 
 public class Util {
-	public void apagaConteudo(String conteudo){
+	public String apagaConteudo(String conteudo){
 		String novoConteudo = "";
-		String procurada="Habitacional ";
-	
-		for(int i = 0; i<conteudo.length(); i++) {
-			novoConteudo = novoConteudo+conteudo.charAt(i);
-		}
-		
+		String procurada="Habitacional";
+
 		int pos = conteudo.indexOf(procurada);
 		
 		for(int i=0;i<pos;i++) {
 			novoConteudo = novoConteudo+conteudo.charAt(i);
-			System.out.println(i);
+//			System.out.println(i+"= "+novoConteudo.charAt(i));
 		}
 		
-		System.out.println(novoConteudo);
+//		System.out.println(novoConteudo.length());
+		return novoConteudo;
 	}
 }
