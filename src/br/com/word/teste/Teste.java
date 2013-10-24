@@ -14,7 +14,8 @@ public class Teste {
 		PdfParser pdf = new PdfParser();
 		Captura cap = new Captura();
 
-		pdf.setEnderecoRecurso("C:/ini.pdf");//arquivo a ser desmembrado
+//		pdf.setEnderecoRecurso("C:/ini.pdf");//arquivo a ser desmembrado
+		pdf.setEnderecoRecurso("C:/Users/USER/Desktop/arquivopdf/ini.pdf");//arquivo a ser desmembrado
 		conteudo = pdf.getConteudo();//Salva conteúdo do arquivo na variável "conteudo"
 		conteudo = conteudo.replaceAll("[\\)]", ";");//transforma parentese em ponto e vírgula
 		conteudo = conteudo.replaceAll("\\s", " ");//codigo para transformar quebra de linha em espaço
@@ -28,7 +29,8 @@ public class Teste {
 		grava.close();
 		
 		//gravar teste autor.txt
-		FileWriter aut = new FileWriter("c:/thiago/autor.doc");
+//		FileWriter aut = new FileWriter("c:/thiago/autor.doc");
+		FileWriter aut = new FileWriter("C:/Users/USER/Desktop/wordcopiado/autor.doc");
 		PrintWriter grvautor = new PrintWriter(aut);
 
 		Util u = new Util();
