@@ -8,6 +8,7 @@ public class Erro {
 
 		try{
 		int teste = Integer.parseInt(JOptionPane.showInputDialog("Digite: "));
+		
 		System.out.println(teste);
 		} catch(NumberFormatException e) {
 //			e.printStackTrace(); Printa Stack Trace : mostra o erro
