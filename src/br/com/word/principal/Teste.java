@@ -1,4 +1,4 @@
-package br.com.word.principal;
+/*package br.com.word.principal;
 
 import java.awt.List;
 import java.io.FileWriter;
@@ -64,3 +64,4 @@ public class Teste {
 	}
 
 }
+*/

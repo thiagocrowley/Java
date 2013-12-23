@@ -1,4 +1,4 @@
-package br.com.word.teste;
+/*package br.com.word.teste;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -98,3 +98,4 @@ public class Teste {
 		grvautor.close();
 	}
 }
+*/

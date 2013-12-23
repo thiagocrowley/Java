@@ -1,4 +1,4 @@
-package br.com.word.principal;
+/*package br.com.word.principal;
 
 import java.io.File; 
 import java.io.FileInputStream; 
@@ -16,11 +16,11 @@ import org.apache.pdfbox.util.PDFTextStripper;
 
 public class PdfParser {
 
-	/*** 
+	*//*** 
 	 * Extract the content from the given PDF file. As a side effect most other fields are set too. 
 	 * 
 	 * @see org.zilverline.extractors.AbstractExtractor#getContent(java.io.File) 
-	 */ 
+	 *//* 
 	private String enderecoRecurso; 
 
 	public void setEnderecoRecurso(String enderecoRecurso) 
@@ -84,3 +84,4 @@ public class PdfParser {
 	} 
 
 }
+*/
